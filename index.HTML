@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATHENAX - Intelligent Tactical AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Glassmorphism effect for background elements */
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.75rem; /* Rounded corners for glassmorphism elements */
+        }
+        /* Hover glow effect for interactive elements */
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(52, 211, 153, 0.5);
+            transition: box-shadow 0.3s ease;
+        }
+        /* Ensure all buttons and interactive elements have rounded corners */
+        button, a.px-4, a.px-6 {
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-[#0c0a09] text-[#e5e7eb] font-['Inter']">
+    <!-- Header: Sticky navigation bar for easy access -->
+    <header class="sticky top-0 z-50 glassmorphism">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <!-- Logo SVG: Abstract representation of data flow/intelligence, adjusted for ATHENAX -->
+                <svg class="w-8 h-8 text-[#34d399]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                <a href="/" class="text-xl font-bold">ATHENAX</a>
+            </div>
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#capabilities" class="hover:text-[#34d399]">Capabilities</a>
+                <a href="#training" class="hover:text-[#34d399]">Training & Data</a>
+                <a href="#strategy" class="hover:text-[#34d399]">Strategic Approach</a>
+                <a href="#resources" class="hover:text-[#34d399]">Resources</a>
+                <a href="#contact" class="px-4 py-2 bg-[#34d399] text-[#0c0a09] rounded-md hover-glow">Connect With Us</a>
+            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button class="md:hidden text-[#34d399]" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden glassmorphism p-4">
+            <a href="#capabilities" class="block px-6 py-2 hover:text-[#34d399]">Capabilities</a>
+            <a href="#training" class="block px-6 py-2 hover:text-[#34d399]">Training & Data</a>
+            <a href="#strategy" class="block px-6 py-2 hover:text-[#34d399]">Strategic Approach</a>
+            <a href="#resources" class="block px-6 py-2 hover:text-[#34d399]">Resources</a>
+            <a href="#contact" class="block px-6 py-2 bg-[#34d399] text-[#0c0a09] mx-6 my-2 rounded-md hover-glow text-center">Connect With Us</a>
+        </div>
+    </header>
+
+    <!-- Hero Section: Main value proposition for ATHENAX -->
+    <section class="container mx-auto px-6 py-20 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight"><span class="text-[#34d399]">ATHENAX:</span> Empowering Tactical Operations with Intelligent Foresight.</h1>
+        <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-[#b0b0b0]">
+            ATHENAX integrates advanced AI into tactical operations, blending <strong class="text-[#34d399]">real-time analytics, autonomous system support, and community-driven insights</strong>. Our platform enhances situational awareness and decision-making for complex, dynamic environments, ensuring transparent and reliable AI performance through Explainable AI (XAI).
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#learn-more" class="px-8 py-4 bg-[#34d399] text-[#0c0a09] rounded-lg hover-glow text-lg font-semibold shadow-lg">Learn More About ATHENAX</a>
+            <a href="#contact" class="px-8 py-4 border border-[#0f2c59] text-[#34d399] rounded-lg hover-glow text-lg font-semibold shadow-lg">Engage Our Team</a>
+            <a href="#whitepaper-download" class="px-8 py-4 border border-[#e5e7eb] text-[#e5e7eb] rounded-lg hover-glow text-lg font-semibold shadow-lg">Download Our Whitepaper</a>
+        </div>
+        <div class="mt-10 flex justify-center items-center space-x-3 text-[#d6d3d1]">
+            <svg class="w-6 h-6 text-[#34d399]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-base font-medium">Driving the future of intelligent and accountable tactical systems.</span>
+        </div>
+    </section>
+
+    <!-- Capabilities Section: Detailed functionalities of ATHENAX -->
+    <section id="capabilities" class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Core Capabilities for Tactical Superiority</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Capability 1: Real-time Hazard Detection -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <svg class="w-10 h-10 text-[#34d399] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Real-time Hazard Detection</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">Leverage advanced AI to identify and alert operators to potential threats, environmental anomalies, and critical changes in real-time, enhancing safety and responsiveness. Supported by XAI to clarify alerts.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Empowering Operator Situational Awareness:</p>
+                <p class="text-sm text-[#d6d3d1]">Provides immediate, actionable intelligence, allowing operators to make faster, more informed decisions under pressure. This reduces reaction time and significantly improves mission success rates and personnel safety.</p>
+                <div class="mt-4 flex items-center space-x-2 text-[#d6d3d1]">
+                    <svg class="w-5 h-5 text-[#34d399]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-sm">Critical Foresight</span>
+                </div>
+            </div>
+
+            <!-- Capability 2: Enhanced Natural Language Understanding (NLU) -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <svg class="w-10 h-10 text-[#34d399] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2zM12 18c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2zM12 2a9 9 0 019 9c0 1.657-.895 3-2 3s-2-1.343-2-3-1.343-2-3-2-3-.895-3-2 1.343-2 3-2z" />
+                </svg>
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Enhanced Natural Language Understanding</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">Process and interpret complex voice commands and mission-critical text data in real-time, enabling seamless interaction with the HUD and other systems in high-stress situations. This NLU model parses technical jargon and contextual queries effectively.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Benefits for Operational Efficiency:</p>
+                <p class="text-sm text-[#d6d3d1]">Streamlines human-AI collaboration by allowing natural communication. Operators can issue commands and receive critical information without diverting focus, significantly improving task execution and reducing cognitive load.</p>
+                <div class="mt-4 flex items-center space-x-2 text-[#d6d3d1]">
+                    <svg class="w-5 h-5 text-[#34d399]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-sm">Intuitive & Responsive Control</span>
+                </div>
+            </div>
+
+            <!-- Capability 3: Adaptive Environmental Awareness -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <svg class="w-10 h-10 text-[#34d399] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 005-5V7a2 2 0 00-2-2H7a2 2 0 00-2 2v6z" />
+                </svg>
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Adaptive Environmental Awareness</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">Integrate and process multimodal data (vision, LiDAR, sensor feeds) to build a comprehensive, dynamic understanding of any operational environment, from urban to rural settings. ATHENAX supports complex real-time analytics for optimizing resource allocation.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Direct Impact for Mission Adaptability:</p>
+                <p class="text-sm text-[#d6d3d1]">Enables operators to perform effectively in diverse and rapidly changing conditions. By understanding environmental nuances, humans can make superior tactical decisions, reducing risks and optimizing resource deployment.</p>
+                <div class="mt-4 flex items-center space-x-2 text-[#d6d3d1]">
+                    <svg class="w-5 h-5 text-[#34d399]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-sm">Contextual Intelligence</span>
+                </div>
+            </div>
+
+            <!-- Capability 4: Predictive Analytics for Threat Mitigation -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <svg class="w-10 h-10 text-[#34d399] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Predictive Analytics for Threat Mitigation</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">Utilize historical and real-time data to forecast potential threats and predict optimal responses, providing operators with a tactical advantage and proactive defense strategies. ATHENAX builds on wargaming insights for superior strategic planning.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Boosting Human Predictive Capabilities:</p>
+                <p class="text-sm text-[#d6d3d1]">Allows human operators to anticipate and prepare for future scenarios, moving from reactive to proactive engagement. This improves strategic planning and reduces the likelihood of being caught off-guard.</p>
+                <div class="mt-4 flex items-center space-x-2 text-[#d6d3d1]">
+                    <svg class="w-5 h-5 text-[#34d399]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-sm">Proactive Decision Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Data & Strategic Approach Section -->
+    <section id="training" class="container mx-auto px-6 py-16 bg-gradient-to-b from-[#0c0a09] to-[#0f2c59] rounded-xl shadow-inner">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Strategic Training & Data Integration for Robust AI</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Reddit Case Study Integration -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Leveraging Unstructured Community Data (Reddit)</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">ATHENAX's hazard detection and adaptability are continuously improved using real-world scenario data from diverse online communities. We process thousands of public posts and comments to train our AI on unfiltered, dynamic situations, applying XAI to filter and validate data for bias.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Impact on Human Training:</p>
+                <p class="text-sm text-[#d6d3d1]">By exposing ATHENAX to a vast array of practical scenarios, operators gain access to an AI that's robust in unpredictable environments. This helps human teams develop a more adaptive mindset and prepare for nuanced, real-world challenges often missed in simulated training.</p>
+                <a href="#reddit-case-study" class="text-[#34d399] hover:underline mt-4">View Reddit Case Study →</a>
+            </div>
+            <!-- Quora Case Study Integration -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Enhancing NLP with Expert Q&A Insights (Quora)</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">Our natural language understanding capabilities are refined using structured insights from expert-driven Q&A platforms. This allows ATHENAX to interpret technical jargon and contextual queries for seamless real-time operator commands, with XAI validating the reliability of community-derived insights.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Value for Operator Proficiency:</p>
+                <p class="text-sm text-[#d6d3d1]">ATHENAX's ability to understand complex commands improves operator efficiency and reduces communication errors. This training method means human operators learn to trust and utilize the AI's intelligent parsing of commands, leading to faster, more accurate mission execution.</p>
+                <a href="#quora-case-study" class="text-[#34d399] hover:underline mt-4">View Quora Case Study →</a>
+            </div>
+             <!-- AI-Driven Wargaming -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">AI-Driven Wargaming & Simulation</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">We leverage generative wargaming platforms to simulate multi-domain conflicts, using reinforcement learning to create adaptive AI opponents. This rigorous testing environment validates ATHENAX enhancements in realism and adaptability, with XAI modules decoding AI strategy choices for human validation in complex scenarios.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Refining Human Tactical Judgement:</p>
+                <p class="text-sm text-[#d6d3d1]">Engaging with AI in advanced simulations sharpens human tactical judgment and decision-making skills against sophisticated adversaries. Operators gain invaluable experience in diverse scenarios, preparing them for real-world complexities.</p>
+                <a href="#wargaming" class="text-[#34d399] hover:underline mt-4">Explore Our Wargaming Approach →</a>
+            </div>
+            <!-- Ethical AI Frameworks -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <svg class="w-10 h-10 text-[#34d399] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Ethical AI & Transparency</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">ATHENAX adheres to rigorous ethical AI frameworks. We conduct XAI audits to ensure transparency, mitigate bias, and align with international guidelines (e.g., UNODA). Every critical AI decision is documented and explainable.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Fostering Human Trust & Accountability:</p>
+                <p class="text-sm text-[#d6d3d1]">Providing clear explanations for AI decisions builds critical trust between human operators and the AI system. This transparency is vital for accountability, regulatory compliance, and ensures humans remain in control, understanding the rationale behind AI recommendations.</p>
+                <a href="#ethical-ai" class="text-[#34d399] hover:underline mt-4">Learn About Our Ethical AI Commitments →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Approach Section: New section to highlight implementation strategy and trends -->
+    <section id="strategy" class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Strategic Approach to AI Deployment</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Integration with 5G/6G Networks -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <svg class="w-10 h-10 text-[#34d399] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Optimized for Next-Gen Networks (5G/6G)</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">ATHENAX is engineered for low-latency data sharing and coordination, critical for autonomous systems and integrated tactical HUDs. Our architecture leverages 5G/6G capabilities to ensure real-time data flow, with XAI ensuring operators understand AI-driven network optimizations.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Impact on Connectivity & Agility:</p>
+                <p class="text-sm text-[#d6d3d1]">This ensures seamless communication and rapid response capabilities in highly dynamic operational environments, allowing human teams to benefit from instantaneous data updates and AI-driven network efficiencies.</p>
+            </div>
+            <!-- Autonomous Mission Execution -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <svg class="w-10 h-10 text-[#34d399] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Facilitating Autonomous Operations</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">ATHENAX supports the integration of fully autonomous systems, such as drone missions, by providing intelligent oversight and real-time data processing. Edge computing advancements further enhance agility and cost-effectiveness, with XAI offering clear rationales for autonomous actions.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Empowering Human Supervision:</p>
+                <p class="text-sm text-[#d6d3d1]">By providing explainable autonomous decisions, human operators maintain effective oversight and control over AI-driven missions, ensuring ethical deployment and mission compliance even in complex, uncrewed scenarios.</p>
+            </div>
+            <!-- Human-AI Collaboration -->
+            <div class="glassmorphism p-8 rounded-lg hover-glow flex flex-col items-start">
+                <svg class="w-10 h-10 text-[#34d399] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H4a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v4m-5 4l-2 2-4-4m5-6h0M9 9h0" />
+                </svg>
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Seamless Human-AI Collaboration</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">ATHENAX is designed as an intelligent assistant, fostering true partnerships between human operators and AI. Our platform adapts training scenarios based on operator performance metrics, ensuring a tailored and continuously improving collaborative experience with XAI guaranteeing transparency in these adaptations.</p>
+                <p class="text-sm text-[#34d399] font-semibold">Optimizing Joint Performance:</p>
+                <p class="text-sm text-[#d6d3d1]">This collaboration model optimizes joint human-AI performance, creating more effective and resilient tactical teams. Operators develop trust and proficiency through clear communication and adaptive AI support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges and Mitigation Section (optional, but good for credibility) -->
+    <section id="challenges" class="container mx-auto px-6 py-16 bg-gradient-to-b from-[#0c0a09] to-[#0f2c59] rounded-xl shadow-inner">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Addressing Key Challenges in AI Deployment</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glassmorphism p-8 rounded-lg flex flex-col items-start">
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Mitigating Data Bias</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">We rigorously filter inputs from diverse data sources like Quora and Reddit using XAI. This ensures the removal of outdated or skewed data, resulting in fair and unbiased training datasets for ATHENAX.</p>
+            </div>
+            <div class="glassmorphism p-8 rounded-lg flex flex-col items-start">
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Optimizing Computational Costs</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">ATHENAX leverages edge AI solutions to reduce reliance on centralized cloud infrastructure. XAI is utilized to prioritize resource-intensive computations, ensuring efficient and cost-effective operations in distributed environments.</p>
+            </div>
+            <div class="glassmorphism p-8 rounded-lg flex flex-col items-start">
+                <h3 class="text-2xl font-bold mb-3 text-[#e5e7eb]">Navigating Regulatory Hurdles</h3>
+                <p class="text-[#b0b0b0] mb-4 flex-grow">Our systems are designed to align with critical standards such as FAA and ICAO for autonomous operations. We leverage XAI to demonstrate compliance with transparency requirements, facilitating smoother regulatory approval and deployment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section: Social proof and testimonials -->
+    <section class="container mx-auto px-6 py-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Empowering Tactical Teams Globally</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 - Adapted -->
+            <div class="glassmorphism p-8 rounded-lg flex flex-col items-center justify-between">
+                <p class="italic text-lg text-[#b0b0b0] flex-grow">"ATHENAX provides unprecedented clarity in high-stakes operations – a true game-changer for our team."</p>
+                <div class="mt-4">
+                    <p class="font-bold text-xl text-[#e5e7eb]">Andrei Fajardo</p>
+                    <p class="text-[#d6d3d1] text-sm">Lead Systems Architect, Defense Tech</p>
+                </div>
+            </div>
+            <!-- Testimonial 2 - Adapted -->
+            <div class="glassmorphism p-8 rounded-lg flex flex-col items-center justify-between">
+                <p class="italic text-lg text-[#b0b0b0] flex-grow">"With ATHENAX, we can analyze tactical data and optimize responses for maximum operational impact."</p>
+                <div class="mt-4">
+                    <p class="font-bold text-xl text-[#e5e7eb]">Kyle Weston</p>
+                    <p class="text-[#d6d3d1] text-sm">Director of Operations, Security Solutions</p>
+                </div>
+            </div>
+            <!-- Testimonial 3 - Adapted -->
+            <div class="glassmorphism p-8 rounded-lg flex flex-col items-center justify-between">
+                <p class="italic text-lg text-[#b0b0b0] flex-grow">"ATHENAX is an indispensable tool for deploying intelligent, reliable, and high-performing tactical AI systems."</p>
+                <div class="mt-4">
+                    <p class="font-bold text-xl text-[#e5e7eb]">Charles Holive</p>
+                    <p class="text-[#d6d3d1] text-sm">SVP, Advanced Systems, Global Defense</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action: Final prompt for user engagement -->
+    <section id="contact" class="container mx-auto px-6 py-16 text-center bg-gradient-to-t from-[#0c0a09] to-[#0f2c59] rounded-xl shadow-inner">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#e5e7eb]">Ready to Elevate Your Tactical Operations with ATHENAX?</h2>
+        <p class="text-lg mb-10 max-w-2xl mx-auto text-[#b0b0b0]">
+            Explore the transformative potential of AI-powered situational awareness. Connect with our team to discuss how ATHENAX can integrate with and enhance your operational framework.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#inquiry-form" class="px-8 py-4 bg-[#34d399] text-[#0c0a09] rounded-lg hover-glow text-lg font-semibold shadow-lg">Submit an Inquiry</a>
+            <a href="#schedule-call" class="px-8 py-4 border border-[#0f2c59] text-[#34d399] rounded-lg hover-glow text-lg font-semibold shadow-lg">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer: Site navigation and legal links -->
+    <footer class="bg-[#0f2c59] text-[#e5e7eb] py-12 rounded-t-xl">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+                <h3 class="text-xl font-bold mb-5 text-[#34d399]">ATHENAX</h3>
+                <p class="text-[#d6d3d1]">Empowering tactical teams with intelligent foresight and real-time operational advantage.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-5">Products</h3>
+                <ul class="space-y-3">
+                    <li><a href="#athenax-core" class="hover:text-[#34d399] transition-colors duration-200">ATHENAX Core Platform</a></li>
+                    <li><a href="#athenax-modules" class="hover:text-[#34d399] transition-colors duration-200">ATHENAX Tactical Modules</a></li>
+                    <li><a href="#docs" class="hover:text-[#34d399] transition-colors duration-200">Documentation</a></li>
+                    <li><a href="#pricing" class="hover:text-[#34d399] transition-colors duration-200">Pricing & Licensing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-5">Resources & Insights</h3>
+                <ul class="space-y-3">
+                    <li><a href="#blog" class="hover:text-[#34d399] transition-colors duration-200">Our Blog & Research</a></li>
+                    <li><a href="#case-studies" class="hover:text-[#34d399] transition-colors duration-200">Case Studies</a></li>
+                    <li><a href="#webinars" class="hover:text-[#34d399] transition-colors duration-200">Webinars & Demos</a></li>
+                    <li><a href="#training" class="hover:text-[#34d399] transition-colors duration-200">Training & Support</a></li>
+                    <li><a href="#community" class="hover:text-[#34d399] transition-colors duration-200">Community & Events</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-5">Company</h3>
+                <ul class="space-y-3">
+                    <li><a href="#about" class="hover:text-[#34d399] transition-colors duration-200">About Us</a></li>
+                    <li><a href="#careers" class="hover:text-[#34d399] transition-colors duration-200">Careers</a></li>
+                    <li><a href="#partnerships" class="hover:text-[#34d399] transition-colors duration-200">Partnerships</a></li>
+                    <li><a href="#press" class="hover:text-[#34d399] transition-colors duration-200">Press & Media</a></li>
+                    <li><a href="#security" class="hover:text-[#34d399] transition-colors duration-200">Security & Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-10 text-center text-sm text-[#b0b0b0]">
+            <p>&copy; 2025 ATHENAX. All rights reserved. Developed by Coreweaver Labs.</p>
+            <p class="mt-3">
+                <a href="#privacy" class="hover:text-[#34d399] transition-colors duration-200">Privacy Policy</a> |
+                <a href="#terms" class="hover:text-[#34d399] transition-colors duration-200">Terms of Service</a> |
+                <a href="#contact" class="hover:text-[#34d399] transition-colors duration-200">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
